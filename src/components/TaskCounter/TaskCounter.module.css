@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.563rem;
+}
+
+.contentLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contentRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.textcreated {
+  color: var(--blue-200);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.textcompleted {
+  color: var(--purple-300);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.numbercreated {
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  background: var(--gray-500);
+  border-radius: 10px;
+}
+
+.numbercompletedandcreated {
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  background: var(--gray-500);
+  border-radius: 10px;
+}

@@ -3,61 +3,98 @@
   border-radius: 8px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   padding: 1rem;
+  flex: 1;
   gap: 0.75rem;
+  margin: 0.75rem 0;
 }
 
 .checkBoxWrapper {
-  border-radius: 50%;
-  border: 2px solid var(--blue-200);
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
+  display: block;
   position: relative;
+  padding-left: 2.188rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  font-size: 1.375rem;
 }
 
-.checkBoxWrapper::before {
+.checkBoxWrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.563rem;
+  width: 1.563rem;
+  background: var(--gray-500);
+  border-radius: 50%;
+  border: 2px solid var(--blue-300);
+}
+
+.checkBoxWrapper:hover input ~ .checkmark {
+  background: var(--blue-300);
+  filter: opacity(0.5);
+}
+
+.checkBoxWrapper input:checked ~ .checkmark {
+  background-color: var(--purple-400);
+  border-color: var(--purple-400);
+}
+
+.checkBoxWrapper .checkmark:after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: -3px;
-  width: 7px;
-  height: 12px;
-  border: 2px solid red;
-  border-top: none;
-  border-right: none;
-  transform: rotate(45deg) translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.checkBoxWrapper input[type="checkbox"] {
-  background-color: transparent;
-  cursor: pointer;
-  width: 16px;
   display: none;
-  border-radius: 50%;
-  height: 16px;
-  margin: 0;
-  appearance: initial;
+  left: 0.563rem;
+  top: 0.313rem;
+  width: 0.313rem;
+  height: 0.625rem;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
-.checkBoxWrapper input[type="checkbox"]:checked {
-  background: var(--purple-400);
-  opacity: 1;
+.checkBoxWrapper input:checked ~ .checkmark:after {
   display: block;
 }
 
-input[type="checkbox"]:checked + .checkBoxWrapper::before {
-  opacity: 1;
+.contentTask {
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
 }
 
-.contentTask {
-  max-width: 21.688rem;
-  color: var(--gray-100);
-  font-size: 0.875;
+.checked {
+  text-decoration: line-through;
+  color: var(--gray-300);
 }
 
 .removeTaskButton {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--gray-300);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.removeTaskButton:hover {
+  color: var(--red-300);
+  border-radius: 4px;
+  background-color: var(--gray-400);
 }

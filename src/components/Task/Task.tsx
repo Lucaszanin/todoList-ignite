@@ -1,20 +1,47 @@
 import { Trash } from "phosphor-react";
 import styles from "./Task.module.css";
+import type * as T from "./types";
+import { useState } from "react";
 
-export function Task() {
+export function Task({
+  content,
+  onDeleteTask,
+  id,
+  onTaskCheckboxChange,
+}: T.TaskProps) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    const newCheckedValue = !isChecked;
+    setIsChecked(newCheckedValue);
+    onTaskCheckboxChange(id, newCheckedValue);
+  };
+
+  const handleDeleteTask = () => {
+    onDeleteTask(id);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.checkBoxWrapper}>
-        <input type="checkbox" />
-      </div>
-      <p className={styles.contentTask}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ipsam
-        ratione fugiat neque? Voluptatum vero, consequuntur beatae incidunt
-        dolor amet. Nulla, veritatis nesciunt optio quia consequuntur
-        accusantium rerum illum aliquid?
+      <label className={styles.checkBoxWrapper}>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
+        <span className={styles.checkmark}></span>
+      </label>
+      <p
+        className={
+          isChecked
+            ? `${styles.contentTask} ${styles.checked}`
+            : styles.contentTask
+        }
+      >
+        {content}
       </p>
-      <button className={styles.removeTaskButton}>
-        <Trash />
+      <button className={styles.removeTaskButton} onClick={handleDeleteTask}>
+        <Trash width={24} height={24} />
       </button>
     </div>
   );

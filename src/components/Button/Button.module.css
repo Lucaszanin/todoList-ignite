@@ -9,10 +9,11 @@
   gap: 0.5rem;
   font-weight: 700;
   color: var(--gray-100);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
+  margin-left: 0.5rem;
 }
 
-.button:hover{
-    background: var(--blue-200);
+.button:hover {
+  background: var(--blue-200);
 }

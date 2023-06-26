@@ -1,5 +1,5 @@
 export type InputProps = {
   type: string;
   value: string;
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
