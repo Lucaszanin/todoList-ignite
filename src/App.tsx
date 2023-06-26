@@ -5,7 +5,7 @@ import "./global.css";
 function App() {
   return (
     <>
-    <Main/>
+      <Main />
     </>
   );
 }

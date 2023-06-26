@@ -59,6 +59,7 @@ function Main() {
     });
     setTasks(tasksWithoutDeletedOne);
     setTaskCreated(taskCreated - 1);
+    setTaskCompletedCount((prevCount) => prevCount - 1)
   }
 
   return (

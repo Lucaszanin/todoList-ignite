@@ -4,12 +4,7 @@
   margin-bottom: 1.563rem;
 }
 
-.contentLeft {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+.contentLeft,
 .contentRight {
   display: flex;
   align-items: center;
@@ -44,4 +39,16 @@
   padding: 0.25rem 0.5rem;
   background: var(--gray-500);
   border-radius: 10px;
+}
+
+@media (max-width: 330px) {
+  .contentLeft,
+  .contentRight {
+    gap: 4px;
+  }
+
+  .numbercreated,
+  .numbercompletedandcreated {
+    padding: 0.30rem;
+  }
 }

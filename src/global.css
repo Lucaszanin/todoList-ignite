@@ -37,7 +37,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  html {
-    font-size: 87.5%;
+  html,
+  body,
+  input,
+  p,
+  textarea,
+  button {
+    font-size: 87.5% !important;
   }
 }
