@@ -53,13 +53,21 @@ function Main() {
     }
   };
 
-  function deleteTask(id: string) {
+  function deleteTask(id: string, isChecked: boolean) {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
       return task.id !== id;
     });
     setTasks(tasksWithoutDeletedOne);
     setTaskCreated(taskCreated - 1);
-    setTaskCompletedCount((prevCount) => prevCount - 1)
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, isChecked: isChecked } : task
+      )
+    );
+
+    if (isChecked) {
+      setTaskCompletedCount((prevCount) => prevCount - 1);
+    }
   }
 
   return (
@@ -88,7 +96,7 @@ function Main() {
                 }
                 content={task.text}
                 id={task.id}
-                onDeleteTask={deleteTask}
+                onDeleteTask={() =>deleteTask(task.id, task.isChecked)}
                 key={task.id}
               />
             );

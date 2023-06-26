@@ -14,11 +14,12 @@ export function Task({
   const handleCheckboxChange = () => {
     const newCheckedValue = !isChecked;
     setIsChecked(newCheckedValue);
-    onTaskCheckboxChange(id, newCheckedValue);
+    onTaskCheckboxChange(newCheckedValue,id);
   };
 
   const handleDeleteTask = () => {
-    onDeleteTask(id);
+    const newCheckedValue = !isChecked;
+    onDeleteTask(id,  newCheckedValue);
   };
 
   return (
