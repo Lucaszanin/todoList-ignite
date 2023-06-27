@@ -61,7 +61,7 @@ Hooks;
 <li>GIT</li>
 <li>Typescript</li>
 <li>Vite</li>
-<li>Phospor Icons</li>
+<li>Phosphor Icons</li>
 </ul>
 
 ## Acessando o site do projeto
