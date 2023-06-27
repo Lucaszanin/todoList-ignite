@@ -66,4 +66,4 @@ Hooks;
 
 ## Acessando o site do projeto
 
-Para acessar o site do projeto Todo Listo, por favor use este link : <a href="https://todo-list-gamma-teal.vercel.app" target="_blank"> Todo List</a>
+Para acessar o site do projeto Todo List, por favor use este link : <a href="https://todo-list-gamma-teal.vercel.app" target="_blank"> Todo List</a>
